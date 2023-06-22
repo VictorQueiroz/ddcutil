@@ -74,9 +74,9 @@ install-data-local:
 	@echo "udevdir:        ${udevdir}"
 
 # @xxx@ names are not defined, names with $() are 
+# sed  -i "s|/usr|${prefix}|" ${rulesdir}/60-ddcutil-usb.rules 
 install-data-hook:
 	@echo "(data/install-data-hook)===> Executing rule: install-data-hook"
-	sed  -i "s|/usr|${prefix}|" ${rulesdir}/60-ddcutil-usb.rules 
 	@echo "Clear out files possibly left over from earlier installation"
 	rm -f ${resdir}/45-ddcutil*
 	rm -f ${rulesdir}/60-ddcutil.rules
